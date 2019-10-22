@@ -15,13 +15,13 @@ public class Main {
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://service.deltasecurity.ru/api/")
+                .baseUrl("")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         ApiService service = retrofit.create(ApiService.class);
 
-        final Call<List<Example>> example = service.example("deltatest", "827ccb0eea8a706c4c34a16891f84e7b");
+        final Call<List<Example>> example = service.example("123", "123");
 
         example.enqueue(new Callback<List<Example>>() {
             public void onResponse(Call<List<Example>> call, Response<List<Example>> response) {
